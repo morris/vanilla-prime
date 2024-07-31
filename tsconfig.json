@@ -1,0 +1,22 @@
+{
+  "include": ["src", "test"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": true,
+
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+
+    "target": "ES2020",
+    "module": "CommonJS",
+    "sourceMap": true,
+    "declaration": true,
+    "noEmit": true
+  }
+}

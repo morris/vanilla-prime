@@ -1,0 +1,6 @@
+/build
+/coverage
+/dist
+/node_modules
+/public/js
+/src/js/vendor

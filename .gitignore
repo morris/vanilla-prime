@@ -1,0 +1,8 @@
+/build
+/coverage
+/dist
+/node_modules
+/public/js
+/public/css
+/src/js/vendor
+/test-results
