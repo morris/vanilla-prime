@@ -6,10 +6,11 @@ No frameworks, no bundlers, no required dependencies;
 only web standards, conventions, a unix-style toolset, and some elbow grease.
 
 Vanilla Prime is not meant to be _easy_.
-From a developer's perspective, it's certainly less ergonomic than your
+From a developer's perspective, it is certainly less ergonomic than your
 fully integrated framework du jour.
 
-But you will become deeply familiar with the web platform,
+But it can be learned,
+and you will become deeply familiar with the web platform,
 and your websites will be performant
 and lightweight
 and timeless
@@ -23,7 +24,7 @@ This repository serves as a guide to Vanilla Prime,
 as well as a boilerplate for adopting it in new projects,
 lest we suffer from eternal framework churn,
 and never shake the ghastly coil
-of contemporary web frameworks.
+of contemporary web stacks.
 
 ## Quick Start
 
@@ -56,7 +57,7 @@ Experiment with the given boilerplate along the way.
 - [exdom](https://github.com/morris/exdom) as a supporting runtime library
 - [Playwright](https://playwright.dev/) for end-to-end and unit testing
 - [c8](https://github.com/bcoe/c8) for test coverage
-- [terser](https://terser.org/) for minification
+- [terser](https://terser.org/) for JavaScript minification
 - [cbst](https://github.com/morris/cbst) for cache busting
 - [Prettier](https://prettier.io/) for code formatting
 - [ESLint](https://eslint.org/) for JavaScript/TypeScript linting
@@ -66,28 +67,28 @@ All of these are optional.
 In particular, TypeScript and SCSS are not strictly vanilla,
 and may be dismissed for even more purity and simplicity.
 
-You'll need to get familar with the terminal and shell scripting,
+You will need to get familiar with the terminal and shell scripting,
 which serves as the tooling's glue.
 
 ## Project Structure
 
-- `/public`: Website root directory for static files and assets, e.g. HTML, CSS, JavaScript, images, ...
-  - `/public/css/<module>.css` (might be generated)
-  - `/public/js/<module>.js` (might be generated)
+- `/public`: Root directory for static files and assets, e.g. HTML, CSS, JavaScript, images, ...
+  - `/public/css/<module>.css` (generated from `/src`)
+  - `/public/js/<module>.js` (generated from `/src`)
   - `/public/index.html`
-- `/scripts`: Shell scripts for development, testing and building the website
+- `/scripts`: Shell scripts for development, testing and building the website.
   - `/scripts/<script>.sh`
-- `/src`: Non-standard source files that need to be pre-processed or compiled (if any), e.g. TypeScript and SCSS files; should have the same structure as `/public`.
+- `/src`: Non-standard source files that need to be compiled (if any), e.g. TypeScript and SCSS files. Should have the same structure as `/public`.
   - `/src/css/<module>.scss`
   - `/src/js/<module>.ts`
 
-It's recommended reading through the shell scripts and
+It is recommended reading through the shell scripts and
 the various config files in the project root
 to understand their purpose, and to be able to adapt them as you see fit.
 
-## Reasonable System for CSS Stylesheet Structure
+## Reasonable System for CSS Stylesheet Structure (rscss)
 
-Follow [rscss](https://rstacruz.github.io/rscss/) in your HTML and CSS.
+Follow [rscss](https://rstacruz.github.io/rscss/) when authoring HTML and CSS.
 
 ## Deep Modules
 
@@ -104,9 +105,22 @@ Use code folding to navigate large files.
 Use _mount functions_ to organize UI code,
 e.g. interactive components and dynamic behaviors.
 
-Mount functions accept a DOM element as their first argument. Their
-responsibility is to set up initial state, event listeners, and provide behavior
-and rendering for the target element.
+Mount functions accept a DOM element as their first argument.
+Their responsibility is to set up initial state, event listeners, and provide behavior
+and rendering for the target element (all of which are optional).
+
+Mount functions do not create or own their target elements.
+Target elements must be created before mounting.
+
+A mount function for a component will usually set some rigid initial HTML
+and define an idempotent `update` function
+that updates the dynamic parts of the component's DOM.
+The `update` function is usually called in response to some DOM event.
+
+Avoid manipulating the DOM directly from event handlers.
+
+Consider toggling visibility
+instead of constructing different DOM trees based on some state.
 
 ## Communicate via DOM Events
 
@@ -124,10 +138,11 @@ Use `CustomEvent` and `detail` to transmit data.
 
 ## Reconciliation
 
-For _reconciliation_
-(i.e. rendering a variable amount of dynamic components efficiently)
-we have not (yet?) found a way to reduing into a truly vanilla form.
-For now, use the `reconcile` function from [exdom](https://github.com/morris/exdom).
+_Reconciliation_ is rendering and re-rendering a variable amount of
+dynamic elements in a given container.
+
+Alas, for reconciliation we have not discovered an efficient, truly vanilla form (yet?).
+For now, use `reconcile` from [exdom](https://github.com/morris/exdom).
 
 ## Vendoring
 
@@ -135,25 +150,25 @@ TODO
 
 ## Speculative Loading
 
-Employ [speculative loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Speculative_loading)
+Implement [speculative loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Speculative_loading),
 especially in case of larger numbers of JavaScript files.
 
 ## For Library Authors
 
 ### JavaScript
 
-- Provide individual ES modules.
-- Provide a bundled ES module.
-  - Tip: Write your entire library in one file to get this for free.
-- Avoid dependencies.
-  - If necessary, accept dependencies as function or constructor arguments.
-- Provide TypeScript typings (`*.d.ts`).
+Consider writing your entire library in one ES module file.
+Otherwise, provide individual ES modules, as well as a bundled ES module.
+
+Always provide TypeScript typings (`*.d.ts`).
+
+Avoid dependencies. If necessary, accept dependencies as function or constructor arguments.
 
 ### CSS
 
 - Find a unique prefix fitting to the library.
 - Prefix component and helper class names.
-- Don't prefix element and variant class names.
+- Do not prefix element and variant class names.
 - Prefix CSS variables.
 - Provide individual CSS files.
 - Provide a bundled CSS file.
@@ -165,9 +180,13 @@ especially in case of larger numbers of JavaScript files.
 - [rscss](https://rstacruz.github.io/rscss/) for organizing CSS (and HTML)
 - [VANILLA TODO](https://github.com/morris/vanilla-todo) (supporting/prior research)
 
-## Roadmap
+## Outlook
 
+The presented story still has some gaps and rough edges.
 Some notable open questions:
 
 - Can routing be done reasonably well with vanilla means?
 - Can vendoring be reasonably automated?
+- What is our stance on server-side generation?
+
+The work continues...
