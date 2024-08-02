@@ -1,6 +1,10 @@
-set -ex
+#!/usr/bin/env bash
+set -o errexit
+set -o nounset
+set -o pipefail
+set -x
 
-rm -rf build dist
+rm --recursive --force build dist
 mkdir -p build
 
 bash scripts/vendor.sh
