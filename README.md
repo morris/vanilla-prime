@@ -146,7 +146,14 @@ For now, use `reconcile` from [exdom](https://github.com/morris/exdom).
 
 ## Vendoring
 
-TODO
+_Vendoring_ is used for importing third-party JavaScript packages.
+They are copied to your project source tree so that there's no need for bundling.
+
+To get pinned versions and type safety, install packages with NPM first,
+and copy the necessary files from `/node_modules/<package>` to `/src/js/vendor`.
+
+Then, create a `/src/js/vendor/<package>.d.ts` file containing `export * from '<package>';`.
+Automate this in `/scripts/vendor.sh`.
 
 ## Speculative Loading
 
