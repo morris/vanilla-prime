@@ -4,4 +4,4 @@ set -o nounset
 set -o pipefail
 set -x
 
-rm --recursive --force build coverage dist public/js public/css src/js/vendor
+rm -rf build coverage dist public/js public/css src/js/vendor

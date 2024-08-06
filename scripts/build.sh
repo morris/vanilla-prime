@@ -4,7 +4,7 @@ set -o nounset
 set -o pipefail
 set -x
 
-rm --recursive --force build dist
+rm -rf build dist
 mkdir -p build
 
 bash scripts/vendor.sh

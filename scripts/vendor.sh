@@ -4,7 +4,7 @@ set -o nounset
 set -o pipefail
 set -x
 
-rm --recursive --force src/js/vendor
+rm -rf src/js/vendor
 mkdir -p src/js/vendor
 
 cp node_modules/exdom/dist/exdom.js src/js/vendor/exdom.js
