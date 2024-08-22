@@ -1,7 +1,7 @@
 {
   "name": "vanilla-prime",
   "version": "1.0.0",
-  "description": "A simpler, more sustainable way to build interactive websites.",
+  "description": "A simpler, more sustainable way of web development",
   "author": "Morris Brodersen <mb@morrisbrodersen.de>",
   "license": "ISC",
   "type": "module",
@@ -15,7 +15,7 @@
     "format": "prettier . --write",
     "format-check": "prettier . --check",
     "lint": "eslint .",
-    "lint-styles": "stylelint src/css/*.scss",
+    "lint-css": "stylelint src/css/*.scss",
     "test": "playwright test",
     "test-ui": "playwright test --ui",
     "test-coverage": "bash scripts/test-coverage.sh",

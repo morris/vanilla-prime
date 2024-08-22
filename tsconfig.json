@@ -1,7 +1,6 @@
 {
   "include": ["src", "test"],
   "compilerOptions": {
-    "rootDir": "src",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowJs": true,
