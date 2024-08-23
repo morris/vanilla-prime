@@ -22,13 +22,13 @@
     "vendor": "bash scripts/vendor.sh"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "@playwright/test": "^1.30.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.14.9",
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.14.1",
     "c8": "^10.1.2",
     "cbst": "^1.0.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.9.0",
     "exdom": "^1.0.0",
     "prettier": "^3.0.2",
     "s4d": "^0.2.0",
@@ -36,6 +36,7 @@
     "stylelint": "^16.7.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "terser": "^5.31.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "typescript-eslint": "^8.2.0"
   }
 }
