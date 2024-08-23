@@ -31,7 +31,7 @@
     "eslint": "^8.57.0",
     "exdom": "^1.0.0",
     "prettier": "^3.0.2",
-    "s4d": "^0.1.2",
+    "s4d": "^0.2.0",
     "sass": "^1.58.3",
     "stylelint": "^16.7.0",
     "stylelint-config-standard-scss": "^13.1.0",
