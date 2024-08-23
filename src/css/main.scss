@@ -1,0 +1,97 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #000;
+  color: #fff;
+}
+
+.splash-screen {
+  font-size: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  background: #fefefe;
+  color: #000;
+  transition:
+    color ease-out 0.2s,
+    background-color ease-out 0.2s;
+  user-select: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4em;
+  text-align: center;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    animation: pulse 1.5s infinite;
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.25;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  > .title {
+    margin: 0;
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 1.25em;
+    letter-spacing: 0.15em;
+    word-spacing: 0.35em;
+    text-transform: uppercase;
+    transform: scale(1, 0.9);
+  }
+
+  > .claim {
+    margin: 1em 0;
+    font-size: 1.15em;
+    line-height: 1.5em;
+    letter-spacing: 0.15em;
+    word-spacing: 0.35em;
+    text-transform: uppercase;
+    transform: scale(1, 1.5);
+  }
+
+  > .link {
+    margin: 1em 0;
+    line-height: 1.5em;
+    letter-spacing: 0.45em;
+    word-spacing: 0.35em;
+    transform: scale(1, 1.2);
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 400px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 20px;
+  }
+}
