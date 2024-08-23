@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -44,9 +44,11 @@ body {
       0% {
         opacity: 1;
       }
+
       50% {
         opacity: 0.25;
       }
+
       100% {
         opacity: 1;
       }
@@ -83,15 +85,15 @@ body {
     text-transform: uppercase;
   }
 
-  @media screen and (min-width: 400px) {
+  @media screen and (width >= 400px) {
     font-size: 14px;
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (width >= 700px) {
     font-size: 16px;
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (width >= 1000px) {
     font-size: 20px;
   }
 }
