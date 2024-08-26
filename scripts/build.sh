@@ -14,4 +14,4 @@ tsc --project tsconfig.build.json
 sass --no-source-map --style=compressed src/css/main.scss build/css/main.css
 
 bash scripts/minify.sh
-cbst build dist cbst.json
+cbst build dist
