@@ -16,9 +16,10 @@
     "format-check": "prettier . --check",
     "lint": "eslint .",
     "lint-css": "stylelint src/css/*.scss",
-    "test": "playwright test",
-    "test-ui": "playwright test --ui",
+    "test": "playwright test --project Chromium",
     "test-coverage": "bash scripts/test-coverage.sh",
+    "test-e2e": "playwright test",
+    "test-ui": "playwright test --ui",
     "vendor": "bash scripts/vendor.sh"
   },
   "devDependencies": {
@@ -29,7 +30,7 @@
     "c8": "^10.1.2",
     "cbst": "^1.0.1",
     "eslint": "^9.9.0",
-    "exdom": "^1.0.0",
+    "exdom": "^2.0.0",
     "prettier": "^3.0.2",
     "s4d": "^0.2.0",
     "sass": "^1.58.3",

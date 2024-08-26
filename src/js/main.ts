@@ -1,14 +1,21 @@
 import { qsa } from './vendor/exdom.js';
 
-const COLORS = ['#111', '#FFDC00', '#39CCCC', '#F012BE', '#01FF70', '#7FDBFF'];
-const BACKGROUNDS = ['#FEFEFE', '#FF4136', '#0074D9', '#85144B', '#001F3F'];
+const COLORS = ['#FFF', '#FFDC00', '#39CCCC', '#F012BE', '#01FF70', '#7FDBFF'];
+const BACKGROUNDS = ['#000', '#FF4136', '#0074D9', '#85144B', '#001F3F'];
 
-function SplashScreen(el: HTMLElement) {
-  let design = 0;
+export function getDesign(index: number) {
+  const color = COLORS[index % COLORS.length];
+  const background = BACKGROUNDS[index % BACKGROUNDS.length];
+
+  return { color, background };
+}
+
+export function SplashScreen(el: HTMLElement) {
+  let index = 0;
   let timeout = setTimeout(setNextDesign, 2500);
 
   function setNextDesign() {
-    design = design + 1;
+    index = index + 1;
     update();
 
     clearTimeout(timeout);
@@ -16,8 +23,7 @@ function SplashScreen(el: HTMLElement) {
   }
 
   function update() {
-    const color = COLORS[design % COLORS.length];
-    const background = BACKGROUNDS[design % BACKGROUNDS.length];
+    const { color, background } = getDesign(index);
 
     el.style.color = color;
     el.style.background = background;
@@ -28,4 +34,6 @@ function SplashScreen(el: HTMLElement) {
   update();
 }
 
-qsa(document, '.splash-screen').forEach(SplashScreen);
+if (typeof document !== 'undefined') {
+  qsa(document, '.splash-screen').forEach(SplashScreen);
+}
