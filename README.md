@@ -6,8 +6,8 @@ No frameworks, no bundlers, no required dependencies.
 Just web standards, patterns, a unix-style toolset, and some elbow grease.
 
 Vanilla Prime is not meant to be _easy_.
-From a developer's perspective, it is certainly less ergonomic than your
-fully integrated framework du jour.
+From a developer's perspective,
+it is certainly less ergonomic than your fully integrated framework du jour.
 
 But it can be learned,
 and you will acquire deep knowledge of the web platform,
@@ -19,53 +19,55 @@ and hackable (in a good way),
 and respect your user's and the world's resources.
 
 > Vanilla Prime is the Dark Souls of web development stacks:
-> Hard to get into, hard to master, but incredibly rewarding.
+> Difficult to get into, hard to master, but incredibly rewarding.
 
 This repository serves as a guide to Vanilla Prime,
 as well as boilerplate for adopting it in new projects,
-lest we suffer from eternal framework churn,
-and never shake the ghastly coil
+lest we suffer eternally from framework churn,
+and never shake the ghastly, over-engineered coil
 of contemporary web development stacks.
 
 ## Quick Start
 
-- Install [Node.js](https://nodejs.org/) >= 20
-- Open a terminal
-- Run `git clone --depth=1 https://github.com/morris/vanilla-prime.git my-website`
-- Run `cd my-website`
-- Run `rm -rf .git`
-- Run `npm install`
-- Run `npm run dev`
-- Visit http://localhost:8080
-- Work on `/src` and `/public`
-- Run `npm run build`
-- Deploy `/dist` somewhere
+- Install [Node.js](https://nodejs.org/) >= 20.
+- Open a terminal.
+- Run `git clone --depth=1 https://github.com/morris/vanilla-prime.git my-website`.
+- Run `cd my-website`.
+- Run `npm install`.
+- Run `npm run dev`.
+- Visit http://localhost:8080.
+- Work on `/src`, `/public`, and anything else really.
+- Run `npm run build`.
+- Deploy `/dist` somewhere.
 
 ---
 
-This guide explains only differentiating concepts, and not in minute detail.
+Vanilla Prime is a spiritual successor to [VANILLA TODO](https://github.com/morris/vanilla-todo),
+which may be a useful supporting read.
+
+Only differentiating concepts are explained in this guide, and not in minute detail.
 Intermediate understanding of the web platform, and a curious mind, is wanted.
 Experiment with the given boilerplate along the way.
 **Happy hacking!**
 
 ## Toolset
 
-- [Node.js](https://nodejs.org/) to run most other tools listed here
-- [TypeScript](https://www.typescriptlang.org/) for JavaScript type safety and correctness
-- [SCSS](https://sass-lang.com/documentation/) for CSS preprocessing
-- [s4d](https://github.com/morris/s4d) as a local development server with live reload and SPA support
-- [exdom](https://github.com/morris/exdom) as a supporting runtime library
-- [Playwright](https://playwright.dev/) for end-to-end and unit testing
-- [c8](https://github.com/bcoe/c8) for test coverage
-- [terser](https://terser.org/) for JavaScript minification
-- [cbst](https://github.com/morris/cbst) for cache busting
-- [Prettier](https://prettier.io/) for code formatting
-- [ESLint](https://eslint.org/) for JavaScript/TypeScript linting
-- [Stylelint](https://stylelint.io/) for CSS linting
+- [Node.js](https://nodejs.org/) to run most other tools listed here.
+- [TypeScript](https://www.typescriptlang.org/) for JavaScript type safety and correctness.
+- [SCSS](https://sass-lang.com/) for CSS preprocessing.
+- [s4d](https://github.com/morris/s4d) as a local development server with live reload and SPA support.
+- [exdom](https://github.com/morris/exdom) as a supporting runtime library.
+- [Playwright](https://playwright.dev/) for end-to-end and unit testing.
+- [c8](https://github.com/bcoe/c8) for test coverage.
+- [terser](https://terser.org/) for JavaScript minification.
+- [cbst](https://github.com/morris/cbst) for cache busting.
+- [Prettier](https://prettier.io/) for code formatting.
+- [ESLint](https://eslint.org/) for JavaScript/TypeScript linting.
+- [Stylelint](https://stylelint.io/) for CSS linting.
 
 All of these are optional.
 In particular, TypeScript and SCSS are not strictly vanilla,
-and may be dismissed for even more purity and simplicity.
+and may be dropped for even more purity.
 
 You will need to get familiar with the terminal and shell scripting,
 which serves as the tooling's glue.
@@ -75,8 +77,11 @@ which serves as the tooling's glue.
 The `/public` directory is the root directory for standard static files and assets,
 e.g. HTML, CSS, JavaScript, images, and so on.
 
-The public directory is served during local development, and should otherwise
-be deployable as-is. Some files in the public directory may be generated from source files.
+The public directory is served during local development,
+and should be deployable to a static web server as-is.
+
+Some files in the public directory may be generated from source files.
+Further production optimizations may use the public directory as input.
 
 ## Source Directory
 
@@ -134,8 +139,8 @@ instead of constructing different DOM trees based on some state.
 
 ## Communicate via DOM Events
 
-Communicate between components primarily via
-[DOM events](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events).
+Use [DOM events](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events)
+to communicate across the user interface.
 Use `CustomEvent` with `detail` to transmit data.
 
 _Data events_ flow from parent components to child components
@@ -157,11 +162,11 @@ For now, use `reconcile` from [exdom](https://github.com/morris/exdom).
 
 ## Vendoring
 
-_Vendoring_ is used when importing third-party JavaScript packages.
-Package files are copied to a project's source or public directory
+Use _vendoring_ when importing third-party libraries,
+i.e. copy library files into a project's source or public directory
 so that there's no need for bundling.
 
-To get pinned versions and type safety, install packages with NPM first,
+To get pinned versions and type safety, install packages with `npm` first,
 and copy the necessary files from `/node_modules/<package>` to `/src/js/vendor`.
 
 Then, create a `/src/js/vendor/<package>.d.ts` file containing `export * from '<package>';`.
@@ -170,7 +175,7 @@ Automate this in `/scripts/vendor.sh`.
 ## Speculative Loading
 
 Implement [speculative loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Speculative_loading),
-especially in case of larger numbers of JavaScript files.
+especially in cases involving larger numbers of JavaScript files.
 
 ## For Library Authors
 
@@ -195,15 +200,15 @@ Avoid dependencies. If necessary, accept dependencies as function or constructor
 
 ## Resources
 
-- [MDN Web Docs](https://developer.mozilla.org/) for all the web platform things
-- [Can I use...](https://caniuse.com) for checking feature compatibility
-- [rscss](https://rstacruz.github.io/rscss/) for organizing CSS (and HTML)
-- [VANILLA TODO](https://github.com/morris/vanilla-todo) (supporting research)
+- [MDN Web Docs](https://developer.mozilla.org/) for all things web platform.
+- [Can I use...](https://caniuse.com) for checking feature compatibility.
+- [rscss](https://rstacruz.github.io/rscss/) for organizing CSS (and HTML).
+- [VANILLA TODO](https://github.com/morris/vanilla-todo) (supporting research).
 
 ## Beyond
 
 Vanilla Prime still has some gaps and rough edges.
-Some notable open questions:
+Notable open questions include:
 
 - Can routing be done reasonably well with vanilla means?
 - Can vendoring be reasonably automated?
