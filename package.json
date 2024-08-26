@@ -2,6 +2,13 @@
   "name": "vanilla-prime",
   "version": "1.0.0",
   "description": "A simpler, more sustainable way of web development",
+  "keywords": [
+    "css",
+    "dom",
+    "html",
+    "vanilla",
+    "web"
+  ],
   "author": "Morris Brodersen <mb@morrisbrodersen.de>",
   "license": "ISC",
   "type": "module",
