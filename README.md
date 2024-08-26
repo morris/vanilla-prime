@@ -23,9 +23,9 @@ and respect your user's and the world's resources.
 
 This repository serves as a guide to Vanilla Prime,
 as well as boilerplate for adopting it in new projects,
-lest we suffer eternally from framework churn,
+lest we eternally suffer from framework churn,
 and never shake the ghastly, over-engineered coil
-of contemporary web development stacks.
+of contemporary web development.
 
 ## Quick Start
 
@@ -36,15 +36,15 @@ of contemporary web development stacks.
 - Run `npm install`.
 - Run `npm run dev`.
 - Visit http://localhost:8080.
-- Work on `/src`, `/public`, and anything else really.
+- Work on `./src`, `./public`, and anything else really.
 - Run `npm run build`.
-- Deploy `/dist` somewhere.
+- Deploy `./dist` somewhere.
 
 ---
 
-Only differentiating, novel concepts are explained in this guide.
+Only differentiating or novel concepts are explained in this guide.
 Intermediate understanding of the web platform, and a curious mind, is wanted.
-Experiment with the given boilerplate along the way.
+Inspect and experiment with the given boilerplate along the way.
 **Happy hacking!**
 
 ## Toolset
@@ -71,7 +71,7 @@ which serves as the tooling's glue.
 
 ## Public Directory
 
-The `/public` directory is the root directory for standard static files and assets,
+The `./public` directory is the root directory for standard static files and assets,
 e.g. HTML, CSS, JavaScript, images, and so on.
 
 The public directory is served during local development,
@@ -82,14 +82,14 @@ Further production optimizations may use the public directory as input.
 
 ## Source Directory
 
-The `/src` directory is for non-standard source files that need to be compiled (if any),
+The `./src` directory is for non-standard source files that need to be compiled (if any),
 e.g. TypeScript and SCSS files.
 
 The source directory has the same structure as the public directory.
 
 ## Scripts Directory
 
-The `/scripts` directory contains shell scripts for development, testing and
+The `./scripts` directory contains shell scripts for development, testing and
 building the project.
 
 It is recommended reading through the shell scripts
@@ -125,9 +125,9 @@ Mount functions do not create or own their target elements.
 Target elements must be created before mounting.
 
 A mount function for a component will often set some rigid initial HTML
-and define an idempotent `update` function
+and define an idempotent update function
 that updates the dynamic parts of the component's DOM.
-The `update` function is usually called in response to certain DOM events.
+The update function is usually called in response to certain DOM events.
 
 Avoid manipulating the DOM directly from event handlers.
 
@@ -164,15 +164,10 @@ i.e. copy library files into a project's source or public directory
 so that there's no need for bundling.
 
 To get pinned versions and type safety, install packages with `npm` first,
-and copy the necessary files from `/node_modules/<package>` to `/src/js/vendor`.
+and copy the necessary files from `./node_modules/<package>` to `./src/js/vendor`.
 
-Then, create a `/src/js/vendor/<package>.d.ts` file containing `export * from '<package>';`.
-Automate this in `/scripts/vendor.sh`.
-
-## Speculative Loading
-
-Implement [speculative loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Speculative_loading),
-especially in cases involving larger numbers of JavaScript files.
+Then, create a `./src/js/vendor/<package>.d.ts` file containing `export * from '<package>';`.
+Automate this in `./scripts/vendor.sh`.
 
 ## For Library Authors
 
