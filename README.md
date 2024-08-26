@@ -1,6 +1,6 @@
 # Vanilla Prime
 
-A simpler, more sustainable way of web development.
+A simpler, more sustainable way of web development. A spiritual successor to [VANILLA TODO](https://github.com/morris/vanilla-todo), further into real-world practice.
 
 No frameworks, no bundlers, no required dependencies.
 Just web standards, patterns, a unix-style toolset, and some elbow grease.
@@ -18,7 +18,7 @@ and independent
 and hackable (in a good way),
 and respect your user's and the world's resources.
 
-> Vanilla Prime is the Dark Souls of web development stacks:
+> Vanilla Prime is the Dark Souls of web development stacks:<br>
 > Difficult to get into, hard to master, but incredibly rewarding.
 
 This repository serves as a guide to Vanilla Prime,
@@ -42,10 +42,7 @@ of contemporary web development stacks.
 
 ---
 
-Vanilla Prime is a spiritual successor to [VANILLA TODO](https://github.com/morris/vanilla-todo),
-which may be a useful supporting read.
-
-Only differentiating concepts are explained in this guide, and not in minute detail.
+Only differentiating, novel concepts are explained in this guide.
 Intermediate understanding of the web platform, and a curious mind, is wanted.
 Experiment with the given boilerplate along the way.
 **Happy hacking!**
