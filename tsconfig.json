@@ -1,21 +1,18 @@
 {
   "include": ["src", "test"],
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "allowJs": true,
 
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
     "strict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
+    "noUnusedLocals": true,
 
     "target": "ES2020",
-    "module": "CommonJS",
+    "module": "NodeNext",
     "sourceMap": true,
     "declaration": true,
+
     "noEmit": true
   }
 }
