@@ -169,6 +169,19 @@ and copy the necessary files from `./node_modules/<package>` to `./src/js/vendor
 Then, create a `./src/js/vendor/<package>.d.ts` file containing `export * from '<package>';`.
 Automate this in `./scripts/vendor.sh`.
 
+## Tests
+
+Use [Playwright](https://playwright.dev/) for unit and end-to-end tests.
+The provided test setup supports test coverage for both.
+
+- Run `npx playwright install` to install Playwright browsers (once).
+- Run `npm run test` for unit and E2E tests on Chromium.
+- Run `npm run test-coverage` for test coverage.
+- Run `npm run test-e2e` for E2E tests on mainstream browsers.
+- Run `npm run test-ui` for interactive tests via the Playwright UI.
+
+Hack on scripts and config files as needed.
+
 ## For Library Authors
 
 ### JavaScript
