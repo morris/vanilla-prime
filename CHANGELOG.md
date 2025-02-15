@@ -1,6 +1,6 @@
 # Changelog
 
-## February 2025
+## 02/2025
 
 - Add section on tests
 - Update pipeline
@@ -8,6 +8,6 @@
 - Remove unnecessary files
 - Update depdencies
 
-## August 2024
+## 08/2024
 
 - First version
