@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
-import { randomUUID } from 'crypto';
-import { promises as fs } from 'fs';
-import * as path from 'path';
+import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // TODO Could this be a package?
 
@@ -33,9 +33,9 @@ if (coverageDir) {
         })),
       };
 
-      await fs.mkdir(coverageDir, { recursive: true });
-      await fs.writeFile(
-        path.join(coverageDir, `coverage-${randomUUID()}.json`),
+      await fs.promises.mkdir(coverageDir, { recursive: true });
+      await fs.promises.writeFile(
+        path.join(coverageDir, `coverage-${crypto.randomUUID()}.json`),
         JSON.stringify(output),
       );
     } catch {
