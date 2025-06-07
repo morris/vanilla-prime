@@ -16,7 +16,7 @@ and lightweight
 and timeless
 and independent
 and hackable (in a good way),
-and respect your user's and the world's resources.
+and respect your users' and the world's resources.
 
 > Vanilla Prime is the Dark Souls of web development stacks:<br>
 > Difficult to get into, hard to master, but incredibly rewarding.
@@ -43,7 +43,7 @@ of contemporary web development.
 ---
 
 Only differentiating or novel concepts are explained in this guide.
-Intermediate understanding of the web platform, and a curious mind, is wanted.
+Intermediate understanding of the web platform, and a curious mind, are wanted.
 Inspect and experiment with the given boilerplate along the way.
 **Happy hacking!**
 
@@ -118,7 +118,8 @@ Use _mount functions_ to organize UI code,
 e.g. interactive components and dynamic behaviors.
 
 Mount functions accept a DOM element as their first argument.
-Their responsibility is to set up initial state, event listeners, and provide behavior
+Their responsibility is setting up initial state, adding event listeners,
+and providing behavior
 and rendering for the target element (all of which are optional).
 
 Mount functions do not create or own their target elements.
@@ -142,12 +143,12 @@ Use `CustomEvent` with `detail` to transmit data.
 
 _Data events_ flow from parent components to child components
 and do not bubble up.
-Data events are in noun-form.
+Data events are in noun form.
 
 _Action events_ bubble up the DOM,
 usually resulting in some parent component state change,
 which is in turn propagated downwards through data events.
-Action events are in verb-form.
+Action events are in verb form.
 
 ## Reconciliation
 
