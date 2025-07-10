@@ -1,9 +1,11 @@
 # Build stage
-FROM node:lts-alpine AS build
+FROM node:lts-slim AS build
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
+
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 
 RUN npm ci --omit=optional --no-audit --no-fund --ignore-scripts
 

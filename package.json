@@ -16,18 +16,18 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "sh scripts/build.sh",
-    "clean": "sh scripts/clean.sh",
-    "dev": "sh scripts/dev.sh",
+    "build": "bash scripts/build.sh",
+    "clean": "bash scripts/clean.sh",
+    "dev": "bash scripts/dev.sh",
     "format": "prettier . --write",
     "format-check": "prettier . --check",
     "lint": "eslint .",
     "lint-css": "stylelint src/css/*.scss",
     "test": "playwright test --project Chromium",
-    "test-coverage": "sh scripts/test-coverage.sh",
+    "test-coverage": "bash scripts/test-coverage.sh",
     "test-e2e": "playwright test",
     "test-ui": "playwright test --ui",
-    "vendor": "sh scripts/vendor.sh"
+    "vendor": "bash scripts/vendor.sh"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

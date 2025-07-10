@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -o errexit
 set -o nounset
 set -o pipefail
 set -x
 
-sh scripts/vendor.sh
+bash scripts/vendor.sh
 
 (trap 'kill 0' SIGINT; \
   tsc --project tsconfig.dev.json --watch --preserveWatchOutput & \
