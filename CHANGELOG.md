@@ -1,5 +1,11 @@
 # Changelog
 
+## 07/2025
+
+- Switch from `bash` to `sh` for portability
+- Add minimal NGINX-based Dockerfile
+- Update dependencies
+
 ## 06/2025
 
 - Update dependencies
