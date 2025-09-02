@@ -1,5 +1,9 @@
 # Changelog
 
+## 09/2025
+
+- Update dependencies
+
 ## 07/2025
 
 - Add minimal NGINX-based Dockerfile
