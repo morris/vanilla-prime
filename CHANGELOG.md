@@ -1,5 +1,9 @@
 # Changelog
 
+## 12/2025
+
+- Update dependencies
+
 ## 09/2025
 
 - Update dependencies
