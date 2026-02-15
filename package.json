@@ -40,8 +40,8 @@
     "prettier": "^3.0.2",
     "s4d": "^0.2.0",
     "sass": "^1.58.3",
-    "stylelint": "^16.7.0",
-    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint": "^17.3.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "terser": "^5.31.1",
     "typescript": "^5.0.4",
     "typescript-eslint": "^8.2.0"
