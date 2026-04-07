@@ -2,14 +2,12 @@
   "include": ["src", "test"],
   "compilerOptions": {
     "moduleResolution": "nodenext",
-    "esModuleInterop": true,
     "allowJs": true,
 
-    "strict": true,
     "noUnusedLocals": true,
 
-    "target": "ES2020",
-    "module": "NodeNext",
+    "target": "esnext",
+    "module": "nodenext",
     "sourceMap": true,
     "declaration": true,
 
